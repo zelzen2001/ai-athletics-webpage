@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Athletics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> 
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0a0f1c;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      font-size: 18px;
+      color: #b0c4ff;
+    }
+
+    .section {
+      padding: 80px 10%;
+      position: relative;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 50px;
+    }
+
+    .cta-button {
+      background: #3da9fc;
+      color: white;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #2f8ae6;
+    }
+
+    .mockup {
+      width: 400px;
+      height: 250px;
+      background: linear-gradient(135deg, #1c2541, #0f3460);
+      border-radius: 20px;
+      box-shadow: 0 0 60px rgba(0,255,150,0.2),
+                  0 0 80px rgba(128,0,255,0.2);
+    }
+
+    video {
+      width: 100%;
+      border-radius: 20px;
+      margin-top: 30px;
+      box-shadow: 0 0 40px rgba(61,169,252,0.4);
+    }
+
+    .form-container {
+      max-width: 600px;
+      margin: auto;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: none;
+      background: #1c2541;
+      color: white;
+    }
+
+    input:focus, select:focus {
+      outline: 2px solid #3da9fc;
+    }
+
+    .blur-purple {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: purple;
+      filter: blur(200px);
+      opacity: 0.15;
+      top: -100px;
+      left: -100px;
+      z-index: -1;
+    }
+
+    .blur-green {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: lime;
+      filter: blur(200px);
+      opacity: 0.15;
+      bottom: -100px;
+      right: -100px;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="blur-purple"></div>
+<div class="blur-green"></div>
+
+<!-- HERO SECTION -->
+<section class="section hero">
+  <div>
+    <h1>AI-Powered Sprint & Movement Analysis</h1>
+    <p>
+      Measure sprint performance and movement form with just your smartphone.
+      Get instant scores, deep insights, and connect athletes with coaches
+      to improve performance and reduce injury risk.
+    </p>
+    <button class="cta-button" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">
+      Join the Waitlist
+    </button>
+  </div>
+
+  <div class="mockup"></div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section class="section">
+  <h2>See How It Works</h2>
+  <video controls>
+    <source src="mvp-video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</section>
+
+<!-- WAITLIST SECTION -->
+<section class="section" id="waitlist">
+  <h2>Join the Waitlist</h2>
+  <div class="form-container">
+    <form id="waitlist-form">
+      <input type="email" id="email" name="email" placeholder="Your email *" required autocomplete="email">
+
+      <label for="role">I am a:</label>
+      <select id="role" name="role" required autocomplete="off">
+        <option value="">Are you an athlete, coach, or other?</option>
+        <option value="Athlete">Athlete</option>
+        <option value="Coach">Coach</option>
+        <option value="Other">Other</option>
+      </select>
+
+      <input type="text" id="club" name="club" placeholder="Club (optional)" autocomplete="organization">
+      <input type="text" id="sport" name="sport" placeholder="Sport (optional)" autocomplete="off">
+
+      <button class="cta-button" type="submit">Join</button>
+    </form>
+
+    <p id="success-message" style="display:none; color:#3da9fc;">
+      Thank you for joining!
+    </p>
+  </div>
+</section>
+
+<script>
+  // import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+  const supabaseUrl = "https://oqhdknprluyfvcgcaijx.supabase.co";
+  const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xaGRrbnBybHV5ZnZjZ2NhaWp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1NTIwMTUsImV4cCI6MjA4NzEyODAxNX0.PeRKZDxZMGzSrygrRdKQiO9mi-uYNnegC2fNn_FRgF8";
+  const supabaseClient = supabase.createClient(supabaseUrl, supabaseKey);
+
+  document.getElementById("waitlist-form")
+    .addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const email = document.getElementById("email").value;
+      const role = document.getElementById("role").value;
+      const club = document.getElementById("club").value;
+      const sport = document.getElementById("sport").value;
+
+      const { error } = await supabaseClient
+        .from("waitlist")
+        .insert([{ email, role, club, sport }]);
+
+      if (!error) {
+        document.getElementById("waitlist-form").reset();
+        document.getElementById("success-message").style.display = "block";
+      } else {
+        alert("Something went wrong: " + error.message);
+      }
+    });
+</script>
+
+</body>
+</html>
