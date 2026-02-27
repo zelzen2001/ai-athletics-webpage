@@ -63,11 +63,17 @@
 
     .mockup {
       width: 400px;
-      height: 250px;
-      background: linear-gradient(135deg, #1c2541, #0f3460);
       border-radius: 20px;
       box-shadow: 0 0 60px rgba(0,255,150,0.2),
                   0 0 80px rgba(128,0,255,0.2);
+      overflow: hidden;
+    }
+
+    .mockup img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 20px;
     }
 
     video {
@@ -119,6 +125,11 @@
       right: -100px;
       z-index: -1;
     }
+
+    .logo {
+      width: 180px;
+      margin-bottom: 30px;
+    }
   </style>
 </head>
 
@@ -128,20 +139,26 @@
 <div class="blur-green"></div>
 
 <!-- HERO SECTION -->
+<!-- HERO SECTION -->
 <section class="section hero">
   <div>
-    <h1>AI-Powered Sprint & Movement Analysis</h1>
+    <img src="logo-white.png" alt="AI Athletics logo" class="logo">
+
+    <h1>Lab-level analyse, nu op je smartphone.</h1>
+
     <p>
-      Measure sprint performance and movement form with just your smartphone.
-      Get instant scores, deep insights, and connect athletes with coaches
-      to improve performance and reduce injury risk.
+      Door je techniek en biomechanica inzichtelijk te maken verbeter je prestaties 
+      én verklein je blessurerisico. Wij maken dat meetbaar, duidelijk en direct toepasbaar.
     </p>
+
     <button class="cta-button" onclick="document.getElementById('waitlist').scrollIntoView({behavior:'smooth'})">
-      Join the Waitlist
+      Join de wachtlijst
     </button>
   </div>
 
-  <div class="mockup"></div>
+  <div class="mockup">
+    <img src="Coach-iPad.png" alt="Coach analyse op iPad">
+  </div>
 </section>
 
 <!-- VIDEO SECTION -->
