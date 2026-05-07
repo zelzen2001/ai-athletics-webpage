@@ -4,14 +4,15 @@
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="en">
 	<head>
 		<title>Telephasic by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 	</head>
-	<body class="homepage is-preload">
+	<body class="no-sidebar is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -33,142 +34,93 @@
 
 					</div>
 
-					<!-- Hero -->
-						<section id="hero" class="container">
-							<img src="images/logo.png" alt="AI Athletics logo" class="hero-logo">
-						<header>
-							<h2>Master your movement</h2>
-						</header>
+				<!-- Main -->
+				<div class="wrapper">
+					<div class="container" id="main">
 
-						<p>
-							We build markerless motion tracking applications that help coaches, athletes,
-							<br />
-							and practitioners understand movement with lab-level precision.
-							<br />
-							Turn biomechanics into clear insights to identify weak points, 
-							<br />
-							improve technique, and optimize performance.
-						</p>
+						<section class="waitlist-section">
 
-						<ul class="actions">
-							<li><a href="#" class="button">Join the waitlist</a></li>
-						</ul>
+							<header class="major">
+								<h2>Join the Waitlist</h2>
+								<p>
+									Get early access to AI Athletics and receive 50% off when the app launches.
+								</p>
+							</header>
+
+							<div class="waitlist-form-wrapper">
+
+								<form id="waitlist-form">
+
+									<div class="row gtr-50">
+
+										<div class="col-12">
+											<input
+												type="text"
+												id="name"
+												name="name"
+												placeholder="Your name"
+												required
+											/>
+										</div>
+
+										<div class="col-12">
+											<input
+												type="email"
+												id="email"
+												name="email"
+												placeholder="Your email"
+												required
+											/>
+										</div>
+
+										<div class="col-12">
+											<select id="role" name="role" required>
+												<option value="">I am a...</option>
+												<option value="Athlete">Athlete</option>
+												<option value="Coach">Coach</option>
+												<option value="Other">Other</option>
+											</select>
+										</div>
+
+										<div class="col-12">
+											<input
+												type="text"
+												id="sport"
+												name="sport"
+												placeholder="Sport"
+											/>
+										</div>
+
+										<div class="col-12">
+											<input
+												type="text"
+												id="club"
+												name="club"
+												placeholder="Club / Team"
+											/>
+										</div>
+
+										<div class="col-12">
+											<ul class="actions special">
+												<li>
+													<input
+														type="submit"
+														value="Join the Waitlist"
+													/>
+												</li>
+											</ul>
+										</div>
+
+									</div>
+
+								</form>
+
+							</div>
+
 						</section>
 
-				</div>
-
-			<!-- Why AI Athletics -->
-			<div class="wrapper">
-				<div class="container">
-
-					<header class="major">
-						<h2>Why AI Athletics</h2>
-					</header>
-
-					<div class="grid-3">
-
-						<div class="image-card card-1">
-							<div class="card-overlay">
-								<h3>Measure What Matters</h3>
-								<p>
-									Turn sprint footage into objective movement data and performance insights.
-								</p>
-							</div>
-						</div>
-
-						<div class="image-card card-2">
-							<div class="card-overlay">
-								<h3>Train With Clear Feedback</h3>
-								<p>
-									Get visual analysis, key metrics, and feedback you can act on.
-								</p>
-							</div>
-						</div>
-
-						<div class="image-card card-3">
-							<div class="card-overlay">
-								<h3>Built for Real Coaching</h3>
-								<p>
-									Made for athletes, coaches, and teams who want sprint analysis in real training context.
-								</p>
-							</div>
-						</div>
-
 					</div>
-
 				</div>
-			</div>
-
-			<!-- Promo -->
-			<div id="promo-wrapper">
-			<section id="promo">
-
-				<div class="promo-card">
-				<h3>Record</h3>
-				<p>
-					Capture a sprint with a phone. No special cameras or markers needed.
-				</p>
-				</div>
-
-				<div class="promo-card">
-				<h3>Analyze</h3>
-				<p>
-					AI Athletics processes the movement data using markerless motion tracking.
-				</p>
-				</div>
-
-				<div class="promo-card">
-				<h3>Improve</h3>
-				<p>
-					Receive clear insights on where speed is lost and what to work on.
-				</p>
-				</div>
-
-			</section>
-			</div>
-
-			<!-- Who it's for -->
-			<div class="wrapper">
-				<section class="container">
-
-					<header class="major">
-						<h2>Who it's for</h2>
-						<p>Built for performance-focused athletes and coaches</p>
-					</header>
-
-					<div class="grid-3">
-
-						<div class="image-card audience-1">
-							<div class="card-overlay">
-								<h3>Athletes</h3>
-								<p>
-									Get objective feedback on your sprint technique and track your progress with real data.
-								</p>
-							</div>
-						</div>
-
-						<div class="image-card audience-2">
-							<div class="card-overlay">
-								<h3>Coaches</h3>
-								<p>
-									Move beyond subjective feedback. Use data-driven insights to optimize training decisions.
-								</p>
-							</div>
-						</div>
-
-						<div class="image-card audience-3">
-							<div class="card-overlay">
-								<h3>Teams & Academies</h3>
-								<p>
-									Scale sprint analysis across your club and make performance development measurable.
-								</p>
-							</div>
-						</div>
-
-					</div>
-
-				</section>
-			</div>
 
 			<!-- Footer -->
 				<div id="footer-wrapper">
@@ -232,6 +184,55 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+		<script>
+
+			const supabaseUrl = "https://oqhdknprluyfvcgcaijx.supabase.co";
+			const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xaGRrbnBybHV5ZnZjZ2NhaWp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1NTIwMTUsImV4cCI6MjA4NzEyODAxNX0.PeRKZDxZMGzSrygrRdKQiO9mi-uYNnegC2fNn_FRgF8";
+
+			const supabaseClient = supabase.createClient(
+				supabaseUrl,
+				supabaseKey
+			);
+
+			document
+				.getElementById("waitlist-form")
+				.addEventListener("submit", async (e) => {
+
+					e.preventDefault();
+
+					const name = document.getElementById("name").value;
+					const email = document.getElementById("email").value;
+					const role = document.getElementById("role").value;
+					const sport = document.getElementById("sport").value;
+					const club = document.getElementById("club").value;
+
+					const { error } = await supabaseClient
+						.from("waitlist")
+						.insert([
+							{
+								name,
+								email,
+								role,
+								sport,
+								club
+							}
+						]);
+
+					if (error) {
+						console.error("SUPABASE ERROR:", error);
+						alert("Something went wrong");
+					}
+					else {
+						alert("Successfully joined the waitlist!");
+
+						document
+							.getElementById("waitlist-form")
+							.reset();
+					}
+				});
+
+		</script>
 
 	</body>
 </html>
