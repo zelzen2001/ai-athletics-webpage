@@ -33,7 +33,8 @@
 							</nav>
 
 					</div>
-
+				</div>
+				
 				<!-- Main -->
 				<div class="wrapper">
 					<div class="container" id="main">
@@ -124,115 +125,38 @@
 
 			<!-- Footer -->
 				<div id="footer-wrapper">
-					<div id="footer" class="container">
-						<header class="major">
-							<h2>Euismod aliquam vehicula lorem</h2>
-							<p>Lorem ipsum dolor sit amet consectetur et sed adipiscing elit. Curabitur vel sem sit<br />
-							dolor neque semper magna lorem ipsum feugiat veroeros lorem ipsum dolore.</p>
-						</header>
-						<div class="row">
-							<section class="col-6 col-12-narrower">
-								<form method="post" action="#">
-									<div class="row gtr-50">
-										<div class="col-6 col-12-mobile">
-											<input name="name" placeholder="Name" type="text" />
-										</div>
-										<div class="col-6 col-12-mobile">
-											<input name="email" placeholder="Email" type="text" />
-										</div>
-										<div class="col-12">
-											<textarea name="message" placeholder="Message"></textarea>
-										</div>
-										<div class="col-12">
-											<ul class="actions">
-												<li><input type="submit" value="Send Message" /></li>
-												<li><input type="reset" value="Clear form" /></li>
-											</ul>
-										</div>
-									</div>
-								</form>
-							</section>
-							<section class="col-6 col-12-narrower">
-								<div class="row gtr-0">
-									<ul class="divided icons col-6 col-12-mobile">
-										<li class="icon brands fa-twitter"><a href="#"><span class="extra">twitter.com/</span>untitled</a></li>
-										<li class="icon brands fa-facebook-f"><a href="#"><span class="extra">facebook.com/</span>untitled</a></li>
-										<li class="icon brands fa-dribbble"><a href="#"><span class="extra">dribbble.com/</span>untitled</a></li>
-									</ul>
-									<ul class="divided icons col-6 col-12-mobile">
-										<li class="icon brands fa-instagram"><a href="#"><span class="extra">instagram.com/</span>untitled</a></li>
-										<li class="icon brands fa-youtube"><a href="#"><span class="extra">youtube.com/</span>untitled</a></li>
-										<li class="icon brands fa-pinterest"><a href="#"><span class="extra">pinterest.com/</span>untitled</a></li>
-									</ul>
-								</div>
-							</section>
+
+					<footer id="footer" class="container">
+
+						<div class="footer-brand">
+
+							<h2>AI Athletics</h2>
+
+							<p>
+								AI-powered sprint analysis for athletes and coaches.
+							</p>
+
 						</div>
-					</div>
-					<div id="copyright" class="container">
-						<ul class="menu">
-							<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						</ul>
-					</div>
-				</div>
 
-		</div>
+						<div class="footer-links">
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+							<a href="index.html">Home</a>
+							<a href="app.html">App</a>
+							<a href="mvp.html">MVP</a>
+							<a href="waitlist.html">Waitlist</a>
+							<a href="contact.html">Contact</a>
 
-		<script>
+						</div>
 
-			const supabaseUrl = "https://oqhdknprluyfvcgcaijx.supabase.co";
-			const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9xaGRrbnBybHV5ZnZjZ2NhaWp4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzE1NTIwMTUsImV4cCI6MjA4NzEyODAxNX0.PeRKZDxZMGzSrygrRdKQiO9mi-uYNnegC2fNn_FRgF8";
+						<div class="footer-bottom">
 
-			const supabaseClient = supabase.createClient(
-				supabaseUrl,
-				supabaseKey
-			);
+							<p>
+								© 2026 AI Athletics. All rights reserved.
+							</p>
 
-			document
-				.getElementById("waitlist-form")
-				.addEventListener("submit", async (e) => {
+						</div>
 
-					e.preventDefault();
+					</footer>
 
-					const name = document.getElementById("name").value;
-					const email = document.getElementById("email").value;
-					const role = document.getElementById("role").value;
-					const sport = document.getElementById("sport").value;
-					const club = document.getElementById("club").value;
-
-					const { error } = await supabaseClient
-						.from("waitlist")
-						.insert([
-							{
-								name,
-								email,
-								role,
-								sport,
-								club
-							}
-						]);
-
-					if (error) {
-						console.error("SUPABASE ERROR:", error);
-						alert("Something went wrong");
-					}
-					else {
-						alert("Successfully joined the waitlist!");
-
-						document
-							.getElementById("waitlist-form")
-							.reset();
-					}
-				});
-
-		</script>
-
-	</body>
-</html>
+				</div>	
+			
